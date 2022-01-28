@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- core react library -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <!-- React DOM library -->
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="app"></div>
+
+
+
+    <script type="text/babel">
+    // inherit all the base functionality of a component into this class
+    //class based components must have inside atleast one function that function is render
+        class App extends React.Component{
+            //resposnible for rendering our template
+            render(){
+                return (
+                    <div className="app-content">
+                        <h1>Hey, ninjas</h1>
+                        <p>{Math.random()*10}</p>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<App/>,document.getElementById('app'))
+    </script>
+</body>
+</html>
