@@ -25,16 +25,32 @@
                 name: 'Ryu',
                 age:30
             }
-
+            handleClick(event){
+                // console.log(event.target)
+                //TypeError: Cannot read properties 'state' of undefined
+                // scope of this keyword
+                console.log(this.state)
+            }
+            handleMouseOver(event){
+                console.log(event.target,event.pageX)
+            }
+            handleCopy(event){
+                console.log('try being orignal for once!')
+            }
             //resposnible for rendering our template
             render(){
                 return (
                     <div className="app-content">
                         <h1>Hey, ninjas</h1>
+                        
                         <p>My name is {this.state.name} and I am {this.state.age}</p>
+                        <button onClick={this.handleClick}>Click Me</button>
+                        <button onMouseOver={this.handleMouseOver}>Hover Me</button>
+                        <p onCopy={this.handleCopy}>What we think, we become</p>
                     </div>
                 )
             }
+            // this refers to the component which the function is stored up
         }
         ReactDOM.render(<App/>,document.getElementById('app'))
     </script>
