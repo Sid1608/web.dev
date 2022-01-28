@@ -23,7 +23,15 @@ when we make a connection from a browser we can pass in a callback function whic
 */
 io.on('connection', function(socket){
     console.log("made socket connection",socket.id);
+    /**listen for chat message*/
+    socket.on('chat',function(data){
+        /**refers to all sockets connected to the server all browsers/clients will have their indivdual sockets */
+        io.sockets.emit('chat',data);
+    })
 })
+
+
+
 /*
 inside this callback function we can pass a variable which is going to refer to that instance of the socket which is made, 
 that one particular socket so say if  we've got 10 different clients all making a connection 
