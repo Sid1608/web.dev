@@ -9,7 +9,22 @@
     <link href="/styles.css" rel="stylesheet"/>
 </head>
 <body>
-    <h1>Woo, you see me!</h1>
+
+    <div id='mario-chat'>
+        <div id="chat-window">
+            <!-- when in one client we send a message the server receives that 
+                then it emits that message to the rest of the clients 
+                so the frontend will handle it recieve that message and 
+                output it below
+            -->
+            <div id="output">
+            </div>
+            </div>
+            <input id="handle" type="text" placeholder="Handle"/>
+            <input id="message" type="text" placeholder="Message"/>
+            <button id="send">Send</button>
+            <!-- when someone enters a message and clicks send then emit this message down the websocket from chat.js which will be recieved on the server -->
+    </div>
     <script src="/chat.js"></script>
 </body>
 </html>
