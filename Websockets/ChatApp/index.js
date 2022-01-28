@@ -28,6 +28,10 @@ io.on('connection', function(socket){
         /**refers to all sockets connected to the server all browsers/clients will have their indivdual sockets */
         io.sockets.emit('chat',data);
     })
+    socket.on('typing',function(data){
+        //broadcast this message to every other client
+        socket.broadcast.emit('typing',data);
+    })
 })
 
 
