@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./Ninjas.css"
 const Ninjas = ({ ninjas,deleteNinja }) => {
   // console.log(props);
   //destructuring

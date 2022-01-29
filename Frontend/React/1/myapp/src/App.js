@@ -38,8 +38,15 @@ class App extends Component{
       ninjas:ninjas,
     })
   }
-
-
+  //when component first mount the DOM component is only mounted once until we refresh the page
+  componentDidMount(){
+    console.log("component mounted")
+  }
+  //fires when state or props changes
+  componentDidUpdate(prevProps,prevState){
+    console.log("component updated");
+    console.log(prevProps,prevState)
+  }
   render() {
     return (
       <div className="App">
