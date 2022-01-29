@@ -4,13 +4,20 @@ import Ninjas from './Ninjas'
 import './App.css';
 
 class App extends Component{
+  state = {
+    ninjas: [
+      { name: 'Ryu', age: 30, belt: 'black', id: 1 },
+      { name: 'Yoshi', age: 20, belt: 'green', id: 2 },
+      { name: 'Crystal', age: 25, belt: 'pink', id: 3 }
+    ]
+  }
   render() {
     return (
       <div className="App">
         <h1>My First React App</h1>
         <p>Welcome:)</p>
-        <Ninjas name="Yoshi" age="20" belt="green" />
-        <Ninjas name="shaun" age="25" belt="black" />
+        <Ninjas ninjas={this.state.ninjas}/>
+        
       </div>
     );
   }
