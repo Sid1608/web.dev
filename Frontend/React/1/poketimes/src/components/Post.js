@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
+import {deletePost} from '../actions/postActions'
 class Post extends Component {
     // state={
     //     post:null,
@@ -64,11 +65,19 @@ const mapStateToProps = (state,ownProps) => {
     }
 }
 
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         // it will be attached to our props
+//         deletePost:(id)=>{
+//             dispatch({type:'DELETE_POST',id:id})
+//         }
+//     }
+// }
 const mapDispatchToProps = (dispatch) => {
     return {
         // it will be attached to our props
         deletePost:(id)=>{
-            dispatch({type:'DELETE_POST',id:id})
+            dispatch(deletePost(id))
         }
     }
 }
