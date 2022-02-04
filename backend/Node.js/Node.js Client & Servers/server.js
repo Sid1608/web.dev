@@ -22,12 +22,15 @@ const server=http.createServer((req,res)=>{
     switch(req.url){
         case '/':
             path+='index.html';
+            res.statusCode=200;
             break;
         case '/about':
             path+='about.html';
+            res.statusCode=200;
             break;
         default:
             path+='404.html';
+            res.statusCode=404;
             break;
     }
 
@@ -37,6 +40,7 @@ const server=http.createServer((req,res)=>{
            console.log(err);
            res.end();
        }else{
+        //    res.statusCode=200;
            //res.write(data);
            //    or
            res.end(data);
