@@ -1,11 +1,21 @@
 const http = require('http');
 const fs = require('fs');
-const { isBuffer } = require('util');
+const _=require('lodash');
 //storing instance of servers
 //callback function will fire every time the request comes to server
 const server=http.createServer((req,res)=>{
+
+    //lodash
+    const num=_.random(0,20);
+    console.log(num);
+    //will excecute only one
+    const greet=_.once(()=>{
+        console.log('hello');
+    })
+    greet();
+    greet();
     //not logs in browser:runningon server not on browser
-    console.log(req.url,req.method);
+    // console.log(req.url,req.method);
     //set header content type 
     res.setHeader('Content-Type','text/html');
     /* 
