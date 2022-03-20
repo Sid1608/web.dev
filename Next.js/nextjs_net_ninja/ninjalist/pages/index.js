@@ -7,10 +7,12 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div >
+    <div>
       
-      <h1>Home Page</h1>
-      <Link href="/ninjas"><a>See Ninja Listing</a></Link>
+      <h1 className={styles.title}>HomePage</h1>
+      <p className={styles.text}>Hello My name is siddharth akar. i am a passionate full stack developer. my hobby is competitive programming</p>
+      <p className={styles.text}> I have expertise in mern stack</p>
+      <Link href="/ninjas"><a className={styles.btn}>See Ninja Listing</a></Link>
     
     </div>
   )
