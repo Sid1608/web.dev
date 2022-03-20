@@ -1,0 +1,17 @@
+body{
+    background: pink;
+    transition: all 1s;
+}
+
+
+
+/* this will be applied to form in addNinja component even if it is not imported their */
+/* form{
+    background:#fff;
+    padding:20px;
+} */
+.ninjas form{
+    background:#fff;
+    padding:20px;
+}
+

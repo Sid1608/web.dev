@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- core react library -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <!-- React DOM library -->
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="app"></div>
+
+
+
+    <script type="text/babel">
+    
+        class App extends React.Component{
+            
+            state={
+                name: 'Ryu',
+                age:30
+            }
+            handleChange=(e)=>{
+                this.setState({
+                    name:e.target.value
+                })
+            }
+            handleSubmit=(e)=>{
+                e.preventDefault();
+                console.log('form submitted',this.state.name)
+            }
+            render(){
+                return (
+                    // // this captures both enter and button click
+                    <div className="app-content">
+                        <h1>My name is {this.state.name}</h1>
+                        
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" onChange={this.handleChange}/>
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                )
+            }
+           
+        }
+        ReactDOM.render(<App/>,document.getElementById('app'))
+    </script>
+</body>
+</html>

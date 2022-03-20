@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- core react library -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <!-- React DOM library -->
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="app"></div>
+
+
+
+    <script type="text/babel">
+    // inherit all the base functionality of a component into this class
+    //class based components must have inside atleast one function that function is render
+        class App extends React.Component{
+            //initial state of the component when first loads
+            state={
+                name: 'Ryu',
+                age:30
+            }
+            handleClick=(event)=>{
+                // console.log(event.target)
+                //TypeError: Cannot read properties 'state' of undefined
+                // when we call a function in reaction to a DOM events like click the context of the this keyword is lost inside the function and it’s set to undefined
+                console.log(this.state)
+                //this function is used to change the state 
+                this.setState({
+                    name:'yoshi',
+                })
+            }
+            handleMouseOver=event=>{
+                console.log(event.target,event.pageX)
+            }
+            handleCopy=event=>{
+                console.log('try being orignal for once!')
+            }
+            //resposnible for rendering our template
+            render(){
+                return (
+                    <div className="app-content">
+                        <h1>Hey, ninjas</h1>
+                        
+                        <p>My name is {this.state.name} and I am {this.state.age}</p>
+                        <button onClick={this.handleClick}>Click Me</button>
+                        <button onMouseOver={this.handleMouseOver}>Hover Me</button>
+                        <p onCopy={this.handleCopy}>What we think, we become</p>
+                    </div>
+                )
+            }
+            // this refers to the component which the function is stored up
+        }
+        ReactDOM.render(<App/>,document.getElementById('app'))
+    </script>
+</body>
+</html>
