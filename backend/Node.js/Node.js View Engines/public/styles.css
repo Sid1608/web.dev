@@ -1,10 +1,4 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
-    <title>Blog Ninja | <%= title %></title>
-    
-    <!-- <style>
+
       @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
       body{
         max-width: 1200px;
@@ -89,5 +83,4 @@
         font-size: 1.2em;
         cursor: pointer;
       }
-    </style> -->
-  </head>
+  
