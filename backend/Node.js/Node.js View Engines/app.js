@@ -6,13 +6,16 @@ app.set('view engine','ejs');
 app.set('views','myviews');
 //listen for requests
 app.listen(3000);//returns instance of server
+
+
+
 app.get('/',(req,res)=>{
     const blogs = [
         {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
         {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},
         {title: 'How to defeat bowser', snippet: 'Lorem ipsum dolor sit amet consectetur'},
       ];
-    res.render('index',{title:'Home'});
+    res.render('index',{title:'Home',blogs});
 })
 app.get('/about',(req,res)=>{
     
