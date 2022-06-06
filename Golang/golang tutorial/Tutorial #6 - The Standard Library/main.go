@@ -22,7 +22,7 @@ func main(){
 
 	index:=sort.SearchInts(ages,30)//return positon of 30 inside ages
 	fmt.Println(index)//2
-	//SearchInts(ages,90)8 
+	//SearchInts(ages,90)8  
 
 	names:=[]string{"yoshi","mario","peach","bowser","luigi"}
 
