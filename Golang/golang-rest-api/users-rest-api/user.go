@@ -32,7 +32,6 @@ func GetUsers(w http.ResponseWriter, r *http.Request){
 	var users []User
 	DB.Find(&users)
 	json.NewEncoder(w).Encode(users)
-
 }
 func GetUser(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
@@ -58,8 +57,6 @@ func UpdateUser(w http.ResponseWriter, r *http.Request){
 	json.NewDecoder(r.Body).Decode(&user)
 	DB.Save(&user)
 	json.NewEncoder(w).Encode(user)
-
-
 }
 func DeleteUser(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
