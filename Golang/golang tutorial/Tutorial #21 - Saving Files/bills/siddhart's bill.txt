@@ -1,0 +1,5 @@
+Bill breakdown: 
+pie:                      ....$4.99 
+cake:                     ....$4.99 
+tip:                      ...$5
+total:                    ...$14.98
