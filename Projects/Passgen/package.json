@@ -1,0 +1,22 @@
+{
+  "name": "passgen",
+  "version": "1.0.0",
+  "description": "Simple password Generator",
+  "main": "index.js",
+  "prefeGlobal":true,
+  "bin":"./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Siddharth Akar",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.1.2",
+    "clipboard": "^2.0.11",
+    "commander": "^9.4.1"
+  }
+}
+//symlink
+// npm link
+//to remove npm unlink
+
