@@ -4,13 +4,16 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
+	cron1 "github.com/robfig/cron"
 	cron "gopkg.in/robfig/cron.v2"
 )
 
 func main() {
 	RunCron()
+	RunCronByLocation()
 	initiateGin()
 }
 
@@ -18,6 +21,20 @@ func RunCron() {
 	c := cron.New()
 	c.AddFunc("@every 00h00m10s", SendMessage)
 	c.Start()
+}
+
+func RunCronByLocation() {
+	loc, err := time.LoadLocation("Europe/Vienna")
+	if err != nil {
+		panic(err)
+	}
+	cronJobs := cron1.NewWithLocation(loc)
+	cronJobs.AddFunc("0 0 8 * * *",func(){
+
+	})
+
+	cronJobs.Start()
+
 }
 
 func SendMessage() {
